@@ -1,17 +1,32 @@
 const gridElement = document.getElementById('grid');
 const button = document.querySelector('button.button');
+let myarray = [];
+const RandomUniqueNumber = getRandomUniqueNumber( 1, 100, 16 );
 
 button.addEventListener('click', function() {
     gridElement.innerHTML = "";
-    const RandomUniqueNumber = getRandomUniqueNumber( 1, 100, 16 );
-
+    console.log(RandomUniqueNumber);
     for (let index = 0; index < 100; index++) {
         const actualCell = createElement('div', 'cell');
         gridElement.appendChild(actualCell);
         actualCell.innerHTML = String(index + 1);
         actualCell.addEventListener('click', function(){
-        actualCell.classList.toggle('selected');
-        console.log(String(index + 1));
+            myarray = [];
+            for ( let i = 0 ; i < 16 ; i++) {
+                if (actualCell.innerHTML === String(RandomUniqueNumber[i])) {
+                    myarray.push(i);
+                }      
+            }
+            console.log(myarray);
+            if (myarray.length === 0){
+                actualCell.classList.toggle('selected');
+                console.log('non ha preso la bomba');
+            } else {
+                actualCell.classList.toggle('selected2');
+                console.log('ha preso la bomba');
+            }
+            
+            
         });
     }
 })
@@ -21,10 +36,6 @@ function createElement(tagName, className){
     cellElement.className = className;
     return cellElement;
 }
-
-
-
-
 
 function getRandomUniqueNumber( minNum, maxNum, elements ){
     const numbersList = [];

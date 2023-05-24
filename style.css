@@ -45,6 +45,7 @@ div.cell.selected{
     background-color: rgb(0, 225, 255);
 }
 
-button.disabled{
-    display: none;
+div.cell.selected2{
+    background-color: red;
 }
+
