@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    background-color: rgb(123, 255, 123);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: white;
+}
+ 
+button{
+    width: 7rem;
+    margin-right: 5px;
+ }
+ 
+ h1{
+    margin-left: 5px;
+ }
+
+ div.grid{
+    height: 700px;
+    width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.cell{
+    width: calc( 100% / 10);
+    height: calc( 700px / 10);
+    border: 3px solid black;
+    line-height: calc( 700px / 10);
+    text-align: center;
+}
+
+div.cell.selected{
+    background-color: rgb(0, 225, 255);
+}
+
+button.disabled{
+    display: none;
+}
