@@ -49,3 +49,7 @@ div.cell.selected2{
     background-color: red;
 }
 
+button.disabled{
+    display: none;
+}
+
